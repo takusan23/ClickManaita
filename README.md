@@ -1,0 +1,2 @@
+# ClickManaita
+Original MOD
