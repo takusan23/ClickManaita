@@ -18,9 +18,8 @@ public class ClickManaita_Emerald extends Item {
 	 public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	 {
 	      	ItemStack itemstack = player.getHeldItem(hand);
-       IBlockState iblockstate = worldIn.getBlockState(pos);
-       Block block = iblockstate.getBlock();
-
+       		IBlockState iblockstate = worldIn.getBlockState(pos);
+       		Block block = iblockstate.getBlock();
 
 			TileEntity tileEntity = null;
 			block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
@@ -88,7 +87,7 @@ public class ClickManaita_Emerald extends Item {
 			block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
 			block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
 
-			return EnumActionResult.SUCCESS;
+		 return EnumActionResult.SUCCESS;
 	 }
 
 }

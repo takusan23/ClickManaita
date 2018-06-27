@@ -61,3 +61,4 @@ public class clickmanaita {
 
 
 }
+    //takusan_23 twitter(@takusan__23)

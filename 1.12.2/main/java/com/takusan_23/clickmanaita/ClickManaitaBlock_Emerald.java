@@ -25,8 +25,17 @@ public class ClickManaitaBlock_Emerald extends Block{
 
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
+        //ItemStackを使えるように
         ItemStack itemStack = playerIn.getHeldItem(hand);
+        //メタデータを取得。これで花崗岩や苗木のドロップが正常に動作する。
+        int i = itemStack.getItem().getMetadata(itemStack);
 
+        //メタデータのあるアイテムも複製可能に！！！
+        //NBT Tagはしらね
+        //dropItemの個数指定出来るの忘れてた（）
+        playerIn.dropItem(new ItemStack(itemStack.getItem(),64, i),true);
+
+/*
         playerIn.dropItem(new ItemStack(itemStack.getItem()),true);
         playerIn.dropItem(new ItemStack(itemStack.getItem()),true);
         playerIn.dropItem(new ItemStack(itemStack.getItem()),true);
@@ -91,6 +100,7 @@ public class ClickManaitaBlock_Emerald extends Block{
         playerIn.dropItem(new ItemStack(itemStack.getItem()),true);
         playerIn.dropItem(new ItemStack(itemStack.getItem()),true);
         playerIn.dropItem(new ItemStack(itemStack.getItem()),true);
+*/
 
         return true;
     }
