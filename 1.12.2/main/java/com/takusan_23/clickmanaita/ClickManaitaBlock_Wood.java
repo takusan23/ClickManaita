@@ -24,15 +24,33 @@ public class ClickManaitaBlock_Wood extends Block {
 
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
-        //ItemStackを使えるように
+
+        //Ver2.0仕様、エンチャとかのNBTタグも行けるっぽいけど挙動がアレ
+        ItemStack itemStack1 = playerIn.inventory.getCurrentItem();
+
+        int s = 0;
+
+        while (s < 2)
+        {
+            playerIn.dropItem(itemStack1,true);
+            s ++;
+        }
+
+        /*
+        *
+        * 旧仕様
+        *
+         //ItemStackを使えるように
         ItemStack itemStack = playerIn.getHeldItem(hand);
         //メタデータを取得。これで花崗岩や苗木のドロップが正常に動作する。
         int i = itemStack.getItem().getMetadata(itemStack);
+        *
+        * */
 
-        //メタデータのあるアイテムも複製可能に！！！
-        //NBT Tagはしらね
-        //dropItemの個数指定出来るの忘れてた（）
-        playerIn.dropItem(new ItemStack(itemStack.getItem(),2, i),true);
+       // playerIn.dropItem(itemStack1,true);
+       // playerIn.dropItem(itemStack1,true);
+
+        //playerIn.dropItem(true);
 
 /*
         playerIn.dropItem(new ItemStack(itemStack.getItem()),true);
