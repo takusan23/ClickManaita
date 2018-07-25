@@ -1,0 +1,18 @@
+{
+  //MODのダウンロードリンク
+  "homepage": "https://minecraft.curseforge.com/projects/clickmanaita/files",
+
+  //Minecraftバージョン
+  //説明
+  "1.12.2": {
+    "2.0.0-beta": "Update Update!!",
+    "2.0.0-beta1": "NTB Item Support"
+  },
+
+  //最新のバージョン
+  //最新版、安定版を書く
+  "promos": {
+    "1.12.2-latest": "2.0.0-beta1",
+    "1.12.2-recommended": "2.0.0-beta1"
+  }
+}
