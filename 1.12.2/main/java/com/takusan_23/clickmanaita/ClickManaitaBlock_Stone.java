@@ -24,6 +24,19 @@ public class ClickManaitaBlock_Stone extends Block {
 
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
+        //Ver2.0仕様、エンチャとかのNBTタグも行けるっぽいけど挙動がアレ
+        //beta1、実用レベルまでに成長した
+        ItemStack item_drop = playerIn.inventory.getCurrentItem().copy().splitStack(1);
+
+        int drop_count = 0;
+
+        while (drop_count < 3)
+        {
+            playerIn.dropItem(item_drop,true);
+            drop_count ++;
+        }
+        /*　旧仕様
+
         //ItemStackを使えるように
         ItemStack itemStack = playerIn.getHeldItem(hand);
         //メタデータを取得。これで花崗岩や苗木のドロップが正常に動作する。
@@ -34,14 +47,7 @@ public class ClickManaitaBlock_Stone extends Block {
         //dropItemの個数指定出来るの忘れてた（）
         playerIn.dropItem(new ItemStack(itemStack.getItem(),4, i),true);
 
-/*
-        playerIn.dropItem(new ItemStack(itemStack.getItem()),true);
-        playerIn.dropItem(new ItemStack(itemStack.getItem()),true);
-        playerIn.dropItem(new ItemStack(itemStack.getItem()),true);
-        playerIn.dropItem(new ItemStack(itemStack.getItem()),true);
 */
-
-
         return true;
     }
 }

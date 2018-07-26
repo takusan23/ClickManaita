@@ -18,13 +18,26 @@ public class ClickManaitaBlock_Emerald extends Block{
         super(Material.IRON,MapColor.EMERALD);
         setCreativeTab(clickmanaita.ClickManaitaTab);
         setHardness(10.0F);
-        setSoundType(SoundType.WOOD);
+        setSoundType(SoundType.METAL);
         setUnlocalizedName("ClickManaitaBlock Emerald");
         setRegistryName("clickmanaitablock_emerald");
     }
 
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
+        //Ver2.0仕様、エンチャとかのNBTタグも行けるっぽいけど挙動がアレ
+        //beta1、実用レベルまでに成長した
+        ItemStack item_drop = playerIn.inventory.getCurrentItem().copy().splitStack(1);
+
+        int drop_count = 0;
+
+        while (drop_count < 7)
+        {
+            playerIn.dropItem(item_drop,true);
+            drop_count ++;
+        }
+
+        /*
         //ItemStackを使えるように
         ItemStack itemStack = playerIn.getHeldItem(hand);
         //メタデータを取得。これで花崗岩や苗木のドロップが正常に動作する。
