@@ -22,18 +22,23 @@ public class ClickManaitaBlock_Wood extends Block {
         setRegistryName("clickmanaitablock_wood");
     }
 
+
+
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
 
         //Ver2.0仕様、エンチャとかのNBTタグも行けるっぽいけど挙動がアレ
-        ItemStack itemStack1 = playerIn.inventory.getCurrentItem();
+        //Beta1、少しマシになった気がする
+        ItemStack itemStack = playerIn.inventory.getCurrentItem().copy().splitStack(1);
 
-        int s = 0;
 
-        while (s < 2)
+        int item_drop = 0;
+
+        while (item_drop < 2)
         {
-            playerIn.dropItem(itemStack1,true);
-            s ++;
+            playerIn.dropItem(itemStack,true);
+
+            item_drop ++;
         }
 
         /*

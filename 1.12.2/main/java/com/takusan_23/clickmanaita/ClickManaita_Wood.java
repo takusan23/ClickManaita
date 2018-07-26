@@ -22,14 +22,16 @@ public class ClickManaita_Wood extends Item {
             Block block = iblockstate.getBlock();
 
 
-			TileEntity tileEntity = null;
-			block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
-			block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
+            int item_drop = 0;
 
+            while (item_drop < 2)
+            {
+                TileEntity tileEntity = null;
+                block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
+                item_drop ++;
+            }
 			return EnumActionResult.SUCCESS;
 
 	 }
-
-
 
 }
