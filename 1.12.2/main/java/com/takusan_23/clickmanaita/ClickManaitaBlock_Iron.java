@@ -26,15 +26,24 @@ public class ClickManaitaBlock_Iron extends Block {
 
         //Ver2.0仕様、エンチャとかのNBTタグも行けるっぽいけど挙動がアレ
         //beta1、実用レベルまでに成長した
-        ItemStack item_drop = playerIn.inventory.getCurrentItem().copy().splitStack(1);
+        //beta2、beta1で増える量がおかしい問題をスタックサイズで制御するように書き直し
+        ItemStack item_drop_stack = playerIn.inventory.getCurrentItem().copy().splitStack(1);
+        ItemStack item_drop_nostack = playerIn.inventory.getCurrentItem().copy();
 
         int drop_count = 0;
 
-        while (drop_count < 4)
-        {
-            playerIn.dropItem(item_drop,true);
-            drop_count ++;
+        if (item_drop_stack.getMaxStackSize() == 1) {
+            while (drop_count < 8){
+                playerIn.dropItem(item_drop_nostack, true);
+                drop_count++;
+            }
         }
+
+        else
+            while (drop_count < 4){
+                playerIn.dropItem(item_drop_stack,true);
+                drop_count ++;
+            }
 
         /*  旧仕様
         //ItemStackを使えるように
