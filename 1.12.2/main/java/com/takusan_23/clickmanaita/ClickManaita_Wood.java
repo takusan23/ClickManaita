@@ -14,22 +14,22 @@ import net.minecraft.world.World;
 
 public class ClickManaita_Wood extends Item {
 
-	 @SuppressWarnings("incomplete-switch")
-	 public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-	 {
-	      	ItemStack itemstack = player.getHeldItem(hand);
-            IBlockState iblockstate = worldIn.getBlockState(pos);
-            Block block = iblockstate.getBlock();
+	 public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+         ItemStack itemstack = player.getHeldItem(hand);
+         IBlockState iblockstate = worldIn.getBlockState(pos);
+         Block block = iblockstate.getBlock();
+         TileEntity tileEntity = null;
 
+         int drop_count = 0;
 
-			TileEntity tileEntity = null;
-			block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
-			block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
+         while (drop_count < 2) {
+             block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
 
-			return EnumActionResult.SUCCESS;
+             drop_count ++;
+         }
 
-	 }
+         return EnumActionResult.SUCCESS;
 
-
-
+     }
 }
+

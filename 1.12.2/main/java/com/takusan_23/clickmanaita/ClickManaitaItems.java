@@ -23,6 +23,9 @@ public class ClickManaitaItems {
 	public static Item ClickManaitaGoldPickaxe;
 	public static Item ClickManaitaDiamondPickaxe;
 
+	public static Item ClickManaitaCustom;
+
+
 	public static void init() {
 
 		ClickManaitaWood = new ClickManaita_Wood().setUnlocalizedName("ClickManaita Wood").setCreativeTab(clickmanaita.ClickManaitaTab);
@@ -37,6 +40,8 @@ public class ClickManaitaItems {
 		ClickManaitaIronPickaxe = new ClickManaita_IronPickaxe(ToolMaterial.IRON).setCreativeTab(clickmanaita.ClickManaitaTab).setUnlocalizedName("ClickManaita Iron Pickaxe");
 		ClickManaitaGoldPickaxe = new ClickManaita_GoldPickaxe(ToolMaterial.GOLD).setCreativeTab(clickmanaita.ClickManaitaTab).setUnlocalizedName("ClickManaita Gold Pickaxe");
 		ClickManaitaDiamondPickaxe = new ClickManaita_DiamondPickaxe(ToolMaterial.DIAMOND).setCreativeTab(clickmanaita.ClickManaitaTab).setUnlocalizedName("ClickManaita Diamond Pickaxe");
+
+		ClickManaitaCustom = new ClickManaitaCustom().setCreativeTab(clickmanaita.ClickManaitaTab).setUnlocalizedName("ClickManaita Custom");
 
 	}
 
@@ -54,6 +59,8 @@ public class ClickManaitaItems {
 		registerItem(ClickManaitaIronPickaxe,"clickmanaita_ironpickaxe");
 		registerItem(ClickManaitaGoldPickaxe,"clickmanaita_goldpickaxe");
 		registerItem(ClickManaitaDiamondPickaxe,"clickmanaita_diamondpickaxe");
+
+		registerItem(ClickManaitaCustom,"clickmanaita_custom");
 	}
 
 	public static void registerItem(Item item, String string) {
@@ -75,6 +82,8 @@ public class ClickManaitaItems {
 		registerRender(ClickManaitaIronPickaxe);
 		registerRender(ClickManaitaGoldPickaxe);
 		registerRender(ClickManaitaDiamondPickaxe);
+
+		registerRender(ClickManaitaCustom);
 
 	}
 

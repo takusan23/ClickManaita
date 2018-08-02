@@ -25,7 +25,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class clickmanaita {
     public static final String MOD_ID = "clickmanaita";
     public static final String MOD_NAME = "ClickManaita";
-    public static final String MOD_VERSION = "2.0.0-beta3";
+    public static final String MOD_VERSION = "2.0.0-beta4";
     public static final String MOD_DEPENDENCIES ="required-after:forge@[1.12.2-14.23.4.2705,)";
     public static final String MOD_ACCEPTED_MC_VERSIONS = "[1.12.2]";
     public static final String CLIENT_PROXY_CLASS = "com.takusan_23.clickmanaita.proxy.ClientProxy";

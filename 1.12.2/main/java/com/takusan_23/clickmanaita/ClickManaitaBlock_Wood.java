@@ -20,6 +20,7 @@ public class ClickManaitaBlock_Wood extends Block {
         setSoundType(SoundType.WOOD);
         setUnlocalizedName("ClickManaitaBlock Wood");
         setRegistryName("clickmanaitablock_wood");
+
     }
 
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
@@ -32,14 +33,18 @@ public class ClickManaitaBlock_Wood extends Block {
 
 
         int drop_count = 0;
+        //int xp_drop_test = playerIn.experienceLevel;
 
         while (drop_count < 2)
         {
            // playerIn.dropItem(item_drop,true);
             spawnAsEntity(worldIn,pos,item_drop);
-
+            //playerIn.addExperience(xp_drop_test);
             drop_count ++;
         }
+
+
+
 
         /*
         *

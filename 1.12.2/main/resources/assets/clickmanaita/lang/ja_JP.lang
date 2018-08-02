@@ -25,9 +25,14 @@ advancements.clickmanaita_emerald.desc=３２倍化
 advancements.clickmanaita_diamond.title=ダイヤモンド
 advancements.clickmanaita_diamond.desc=６４倍化
 
+advancements.clickmanaita_diamond.title=カスタム版
+advancements.clickmanaita_diamond.desc=金床で名前を増やしたい量の数字に変更してください。
+
 tile.ClickManaitaBlock Wood.name=クリックまな板ブロック 木製
 tile.ClickManaitaBlock Stone.name=クリックまな板ブロック 石製
 tile.ClickManaitaBlock Iron.name=クリックまな板ブロック 鉄製
 tile.ClickManaitaBlock Gold.name=クリックまな板ブロック 金製
 tile.ClickManaitaBlock Diamond.name=クリックまな板ブロック ダイヤモンド製
 tile.ClickManaitaBlock Emerald.name=クリックまな板ブロック エメラルド製
+
+item.ClickManaita Custom.name=クリックまな板　カスタム
